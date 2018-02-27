@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div id="app" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="user in users">
+            <th scope="row">[[ user.id ]]</th>
+            <td v-on:click="showDetails" v-bind:id="user.id">[[ user.first_name ]]</td>
+            <td v-on:click="showDetails" v-bind:id="user.id">[[ user.last_name ]]</td>
+            <td v-on:click="showDetails" v-bind:id="user.id">[[ user.phone ]]</td>
+            <td v-on:click="showDetails" v-bind:id="user.id">[[ user.email ]]</td>
+        </tr>
+
+</table>
+</div>
+<script rel="script" src="{{ url_for('users.static', filename='users.js') }}"></script>
+
+{% endblock %}

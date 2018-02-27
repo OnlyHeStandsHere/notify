@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style/bootstrap.min.css">
+    <script rel="script" src="/static/scripts/jquery.js"></script>
+    <script rel="script" src="/static/scripts/vue.js"></script>
+    <title>{{ title }} | CAS Alerts</title>
+</head>
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{{ url_for('users.user_index') }}">Users</a>
+                <a class="nav-item nav-link" href="{{ url_for('clients.client_home') }}">Clients</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+
+</body>
+<script rel="script" src="/static/scripts/bootstrap.min.js"></script>
+</html>
