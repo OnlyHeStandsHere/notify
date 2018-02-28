@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div id="app" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<h1>Client Listing</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="client in clients">
+                <th scope="row">[[ client.id ]]</th>
+                <td v-bind:id="client.id">[[ client.name ]]</td>
+            </tr>
+    </table>
+</div>
+
+<script rel="script" src="{{ url_for('client.static', filename='clients.js') }}"></script>
+{% endblock %}

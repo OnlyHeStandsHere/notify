@@ -69,6 +69,7 @@ class Client(Base):
     @property
     def serialize(self):
         return {
+            'id': self.id,
             'name': self.name
         }
 

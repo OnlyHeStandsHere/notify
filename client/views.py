@@ -12,7 +12,7 @@ client = Blueprint('client', __name__,
 
 @client.route('/home')
 def client_home():
-    return render_template('index.html', title='Clients')
+    return render_template('clients.html', title='Clients')
 
 
 @client.route('/api/index')

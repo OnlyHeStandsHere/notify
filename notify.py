@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, url_for, jsonify
 from models.database import db_session
-from models.models import User
+
 from users.views import users
-from clients.views import client
+from client.views import client
 
 app = Flask(__name__)
 app.register_blueprint(users)
