@@ -12,14 +12,17 @@ class User(Base):
     last_name = Column(String(50), nullable=False)
     email = Column(String(120), unique=True, nullable=False)
     phone = Column(String(30), unique=False, nullable=True)
-    pw_hash = Column(String(200))
+    pw_hash = Column(String(200), nullable=True)
 
-    def __init__(self, first_name, last_name, email, phone, password):
+    def __init__(self, first_name, last_name, email, phone, password=None):
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
         self.phone = phone
-        self.pw_hash = self.hash_pw(password)
+        if password:
+            self.pw_hash = self.hash_pw(password)
+        else:
+            self.pw_hash = password
 
     def __repr__(self):
         return '<User %r>' % (self.name)
@@ -48,8 +51,7 @@ class User(Base):
             'first_name': self.first_name,
             'last_name': self.last_name,
             'email': self.email,
-            'phone': self.phone,
-            'details_visible': False
+            'phone': self.phone
         }
 
 

@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
-
 {% block content %}
 
 <div id="app" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+
 <table class="table">
     <thead>
         <tr>
@@ -23,6 +23,12 @@
         </tr>
 
 </table>
+
+    <div id="new-user">
+        <button class="btn btn-primary" v-on:click="showNewUser" v-show="!showNewUserForm">Add User</button>
+        {% include 'user_form.html' %}
+    </div>
+
 </div>
 <script rel="script" src="{{ url_for('users.static', filename='users.js') }}"></script>
 
